@@ -12,9 +12,23 @@ import { NotImplementedError } from '../extensions/index.js';
  * depthCalc.calculateDepth([[[]]]) => 3
  *
  */
-export default class DepthCalculator {
-  calculateDepth(/* arr */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+ export default class DepthCalculator {
+  calculateDepth( arr ) {
+    if(arr ==null || arr.length ==0){
+      return 1;
+    }
+      for(let i=0; i<arr.length; i++){
+         if(arr.every(Type) == true){
+           return 1;
+        }else{
+          if (Array.isArray(arr[i])) {
+             return 1 + calculateDepth(arr[i]);
+          }       
+        }
+      }
   }
+}
+
+function Type (arr){
+  return typeof arr =="number";
 }
